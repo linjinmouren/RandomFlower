@@ -1,5 +1,6 @@
 package com.mcjinmouren.extrabotany.common.Block;
 
+import com.mcjinmouren.extrabotany.ExtraBotany;
 import com.mcjinmouren.extrabotany.Utils;
 import com.mcjinmouren.extrabotany.common.Block.BlockEntity.GeneratingFlower.BloodyEnchantressBlockEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -21,13 +22,12 @@ import vazkii.botania.common.block.block_entity.BotaniaBlockEntities;
 import vazkii.botania.common.item.block.SpecialFlowerBlockItem;
 import vazkii.botania.xplat.XplatAbstractions;
 
-import java.util.Objects;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
 public class ModBlocks {
 
-    private static final Item.Properties props = new Item.Properties();
+    private static final Item.Properties props = new Item.Properties( );
     private static final BlockBehaviour.Properties FLOATING_PROPS = BlockBehaviour.Properties.copy(Blocks.DIRT).strength(0.5F).sound(SoundType.GRAVEL).lightLevel(s -> 15);
 
     //generating
@@ -43,11 +43,13 @@ public class ModBlocks {
     public static void registerBlocks(BiConsumer<Block, ResourceLocation> r){
     r.accept(bloodyenchantress, Utils.BLOODY_ENCHANTRESS);
     r.accept(bloodyenchantressFloating, floating(Utils.BLOODY_ENCHANTRESS));
+    ExtraBotany.LOGGER.info("RegisterBlocks");
     }
 
     public static void registerItemBlocks(BiConsumer<Item, ResourceLocation> r){
     r.accept(bloodyenchantress_item, getId(bloodyenchantress));
     r.accept(bloodyenchantressFloating_item, getId(bloodyenchantressFloating));
+    ExtraBotany.LOGGER.info("RegisterItems");
     }
 
     public static void registerWandHudCaps(BotaniaBlockEntities.BECapConsumer<WandHUD> consumer){

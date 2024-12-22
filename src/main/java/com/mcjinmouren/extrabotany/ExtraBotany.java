@@ -11,6 +11,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -19,6 +21,8 @@ import java.util.function.Consumer;
 
 @Mod(Utils.MOD_ID)
 public class ExtraBotany {
+
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public ExtraBotany() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
