@@ -2,7 +2,8 @@ package com.mcjinmouren.extrabotany;
 
 import net.minecraft.resources.ResourceLocation;
 
-import static vazkii.botania.common.lib.ResourceLocationHelper.prefix;
+import static com.mcjinmouren.extrabotany.api.lib.ResourceLocationHelper.prefix;
+
 
 public class Utils {
 
