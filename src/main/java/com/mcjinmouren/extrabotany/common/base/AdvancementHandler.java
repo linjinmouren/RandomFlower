@@ -1,6 +1,6 @@
 package com.mcjinmouren.extrabotany.common.base;
 
-import com.mcjinmouren.extrabotany.Utils;
+import com.mcjinmouren.extrabotany.ExtraBotany;
 import com.mcjinmouren.extrabotany.api.advancement.IAdvancementRequirement;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementProgress;
@@ -35,7 +35,7 @@ public final class AdvancementHandler {
 
     public void grantAdvancement(ServerPlayer player, String id)
     {
-        PlayerHelper.grantCriterion(player, new ResourceLocation(Utils.MOD_ID, "main/" + id), "code_triggered");
+        PlayerHelper.grantCriterion(player, new ResourceLocation(ExtraBotany.MOD_ID, "main/" + id), "code_triggered");
     }
 
     public static boolean checkAdvancement(Player player, String modid, String advancement)
@@ -106,7 +106,7 @@ public final class AdvancementHandler {
         {
             if (event.getItemStack().getItem() instanceof IAdvancementRequirement r)
             {
-                if (checkAdvancement(event.getEntity(), Utils.MOD_ID, r.getAdvancementName()))
+                if (checkAdvancement(event.getEntity(), ExtraBotany.MOD_ID, r.getAdvancementName()))
                     event.setCanceled(true);
             }
         }
@@ -144,7 +144,7 @@ public final class AdvancementHandler {
                     final ItemStack stack = c.getStackInSlot(i);
                     if (stack.getItem() instanceof IAdvancementRequirement r)
                     {
-                        if (checkAdvancement(player, Utils.MOD_ID, r.getAdvancementName()))
+                        if (checkAdvancement(player, ExtraBotany.MOD_ID, r.getAdvancementName()))
                         {
                             c.setStackInSlot(i, ItemStack.EMPTY);
                             player.drop(stack, false);
@@ -158,7 +158,7 @@ public final class AdvancementHandler {
                 final ItemStack stack = player.getItemBySlot(slot);
                 if (stack.getItem() instanceof IAdvancementRequirement r)
                 {
-                    if (checkAdvancement(player, Utils.MOD_ID, r.getAdvancementName()))
+                    if (checkAdvancement(player, ExtraBotany.MOD_ID, r.getAdvancementName()))
                     {
                         player.setItemSlot(slot, ItemStack.EMPTY);
                         player.drop(stack, false);
@@ -167,5 +167,4 @@ public final class AdvancementHandler {
             }
         }
     }
-
 }

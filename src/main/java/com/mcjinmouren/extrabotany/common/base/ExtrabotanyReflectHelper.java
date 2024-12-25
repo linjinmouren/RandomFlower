@@ -1,6 +1,6 @@
 package com.mcjinmouren.extrabotany.common.base;
 
-import com.mcjinmouren.extrabotany.Utils;
+import com.mcjinmouren.extrabotany.ExtraBotany;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -13,7 +13,7 @@ public class ExtrabotanyReflectHelper {
             return ObfuscationReflectionHelper.getPrivateValue(clazz, instance, fieldName);
         } catch (Exception e)
         {
-            throw new IllegalStateException(Utils.MOD_ID + "AdvancementHandler Error when read from class \"" + clazz + "\"! Maybe Field ID \"" + fieldName + "\" has been changed!");
+            throw new IllegalStateException(ExtraBotany.MOD_ID + "AdvancementHandler Error when read from class \"" + clazz + "\"! Maybe Field ID \"" + fieldName + "\" has been changed!");
         }
     }
 
@@ -24,7 +24,7 @@ public class ExtrabotanyReflectHelper {
             ObfuscationReflectionHelper.setPrivateValue(clazz, instance, value, fieldName);
         } catch (Exception e)
         {
-            throw new IllegalStateException(Utils.MOD_ID + "AdvancementHandler Error when write into class \"" + clazz + "\"! Maybe Field ID \"" + fieldName + "\" has been changed!");
+            throw new IllegalStateException(ExtraBotany.MOD_ID + "AdvancementHandler Error when write into class \"" + clazz + "\"! Maybe Field ID \"" + fieldName + "\" has been changed!");
         }
     }
 }

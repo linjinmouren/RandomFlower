@@ -1,4 +1,4 @@
-package com.mcjinmouren.extrabotany.common.Effects;
+package com.mcjinmouren.extrabotany.common.effect.MobEffects;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

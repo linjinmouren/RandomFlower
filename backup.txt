@@ -1,0 +1,300 @@
+//IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        //ExtraBotanyEffects.register(modEventBus);
+        //ModTab.register(modEventBus);
+        //bind(Registries.BLOCK, ExtraBotanyFlowerBlocks::registerBlocks);
+        //bindForItems(ExtraBotanyFlowerBlocks::registerItemBlocks);
+        //(Registries.BLOCK_ENTITY_TYPE, ExtraBotanyFlowerBlocks::registerTEs);
+        /*private static <T> void bind(ResourceKey<Registry<T>> registry, Consumer<BiConsumer<T, ResourceLocation>> source) {
+                FMLJavaModLoadingContext.get().getModEventBus().addListener((RegisterEvent event) -> {
+                    if (registry.equals(event.getRegistryKey())) {
+                        source.accept((t, rl) -> event.register(registry, rl, () -> t));
+                    }
+                });
+            }
+
+            private final Set<Item> itemsToAddToCreativeTab = new LinkedHashSet<>();
+
+            private void bindForItems(Consumer<BiConsumer<Item, ResourceLocation>> source) {
+                FMLJavaModLoadingContext.get().getModEventBus().addListener((RegisterEvent event) -> {
+                    if (event.getRegistryKey().equals(Registries.ITEM)) {
+                        source.accept((t, rl) -> {
+                            itemsToAddToCreativeTab.add(t);
+                            event.register(Registries.ITEM, rl, () -> t);
+                        });
+                    }
+                });
+            }*/
+/*
+    private static final Item.Properties props = new Item.Properties( );
+    private static final BlockBehaviour.Properties FLOATING_PROPS = BlockBehaviour.Properties.copy(Blocks.DIRT).strength(0.5F).sound(SoundType.GRAVEL).lightLevel(s -> 15);
+
+    //generating
+    public static final Block bloodyenchantress = createSpecialFlowerBlock(() -> ModBlocks.BLOODYENCHANTRESS);
+    public static final Block bloodyenchantressFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, ()->ModBlocks.BLOODYENCHANTRESS);
+
+    //block entity types
+    public static final BlockEntityType<BloodyEnchantressBlockEntity> BLOODYENCHANTRESS = XplatAbstractions.INSTANCE.createBlockEntityType(BloodyEnchantressBlockEntity::new, bloodyenchantress, bloodyenchantressFloating);
+
+    public static final Item bloodyenchantress_item = new SpecialFlowerBlockItem(bloodyenchantress, props);
+    public static final Item bloodyenchantressFloating_item = new SpecialFlowerBlockItem(bloodyenchantressFloating, props);
+
+    public static void registerBlocks(BiConsumer<Block, ResourceLocation> r){
+    r.accept(bloodyenchantress, Utils.BLOODY_ENCHANTRESS);
+    r.accept(bloodyenchantressFloating, floating(Utils.BLOODY_ENCHANTRESS));
+    ExtraBotany.LOGGER.info("RegisterBlocks");
+    }
+
+    public static void registerItemBlocks(BiConsumer<Item, ResourceLocation> r){
+    r.accept(bloodyenchantress_item, getId(bloodyenchantress));
+    r.accept(bloodyenchantressFloating_item, getId(bloodyenchantressFloating));
+    ExtraBotany.LOGGER.info("RegisterItems");
+    }
+
+    public static void registerWandHudCaps(BotaniaBlockEntities.BECapConsumer<WandHUD> consumer){
+        consumer.accept(be -> new BindableSpecialFlowerBlockEntity.BindableFlowerWandHud<>((GeneratingFlowerBlockEntity) be),
+                BLOODYENCHANTRESS);
+    }
+
+    public static void registerTEs(BiConsumer<BlockEntityType<?>, ResourceLocation> r){
+        r.accept(BLOODYENCHANTRESS, getId(bloodyenchantress));
+    }
+
+    private static ResourceLocation getId(Block b)
+    {
+        return BuiltInRegistries.BLOCK.getKey(b);
+    }
+
+    private static ResourceLocation floating(ResourceLocation orig) {
+        return new ResourceLocation(orig.getNamespace(), "floating_" + orig.getPath());
+    }
+
+    private static FlowerBlock createSpecialFlowerBlock(
+            Supplier<BlockEntityType<? extends SpecialFlowerBlockEntity>> beType) {
+        return XplatAbstractions.INSTANCE.createSpecialFlowerBlock(
+                MobEffects.HARM, 114, ModBlocks.FLOATING_PROPS, beType);
+    }
+*/
+
+
+/*public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
+
+
+    private static final String TAG_BURN_TIME = "burnTime";
+    private static final int RANGE = 1;
+
+    private static final int COOLDOWN_EVENT = 0;
+
+    private int burnTime = 0;
+
+    public BloodyEnchantressBlockEntity(BlockPos pos, BlockState state) {
+        super(ExtraBotanyFlowerBlocks.BLOODYENCHANTRESS, pos, state);
+    }
+
+    @Override
+    public void tickFlower() {
+        super.tickFlower();
+        Level world = getLevel();
+        if (burnTime > 0) {
+            burnTime--;
+            return;
+        }
+        if (world != null && (!isValidBinding() || getMana() >= getMaxMana() || world.isClientSide)) return;
+        Stream<LivingEntity> tmp = null;
+        if (world != null) {
+            tmp = Objects.requireNonNull(world.getEntitiesOfClass(LivingEntity.class, new AABB(getEffectivePos().offset(-RANGE, -RANGE, -RANGE), getEffectivePos().offset(RANGE + 1, RANGE + 1, RANGE + 1))).stream().filter(entity->!entity.isRemoved()));
+        }
+        List<LivingEntity> ampArr = null;
+        if (tmp != null) {
+            ampArr = tmp.toList();
+        }
+        if (ampArr != null && ampArr.isEmpty()) return;
+        int[] ampNum= null;
+        if (ampArr != null) {
+            ampNum = ampArr.stream().map(entity -> entity.hasEffect(ExtraBotanyEffects.BLOOD_TEMPTATION.get()) ? Objects.requireNonNull(entity.getEffect(ExtraBotanyEffects.BLOOD_TEMPTATION.get())).getAmplifier() : 0).mapToInt(Integer::intValue).toArray();
+        }
+        int ampAll= 0;
+        if (ampNum != null) {
+            ampAll = Arrays.stream(ampNum).sum();
+        }
+        if (ampAll > 35) return;
+        if (ampNum != null) {
+            for (int i = 0; i < ampNum.length; i++) {
+                if (getMana() < getMaxMana()) {
+                    if (Math.random() > 0.5F) {
+                        int amp = ampNum[i];
+                        LivingEntity living=ampArr.get(i);
+                        if (amp > 4) continue;
+                        addMana(500 - 20 * amp - 10 * ampAll);
+                        living.addEffect(new MobEffectInstance(ExtraBotanyEffects.BLOOD_TEMPTATION.get(), 8 * 20, amp + 1));
+                        if (living instanceof ServerPlayer) AdvancementHandler.INSTANCE.grantAdvancement((ServerPlayer) living, LibAdvancementNames.BLOODY_ENCHANTRESS_USE);
+                        living.hurt(Objects.requireNonNull(world).damageSources().magic(), 4.0F);
+                        burnTime += 20;
+                    }
+                } else break;
+            }
+        }
+    }
+
+    @Override
+    public void writeToPacketNBT(CompoundTag cmp) {
+        super.writeToPacketNBT(cmp);
+        cmp.putInt(TAG_BURN_TIME, burnTime);
+    }
+
+    @Override
+    public void readFromPacketNBT(CompoundTag cmp) {
+        super.readFromPacketNBT(cmp);
+        burnTime = cmp.getInt(TAG_BURN_TIME);
+    }
+
+    @Override
+    public boolean triggerEvent(int event, int param) {
+        if (event == COOLDOWN_EVENT) {
+            Level world = getLevel();
+            Entity e = null;
+            if (world != null) {
+                e = world.getEntity(param);
+            }
+            if (e != null) {
+                e.level().addParticle(ParticleTypes.LARGE_SMOKE, e.getX(), e.getY() + 0.1, e.getZ(), 0.0D, 0.0D, 0.0D);
+                e.level().addParticle(ParticleTypes.FLAME, e.getX(), e.getY(), e.getZ(), 0.0D, 0.0D, 0.0D);
+            }
+            return true;
+        } else {
+            return super.triggerEvent(event, param);
+        }
+    }
+
+    @Override
+    public int getMaxMana() {
+        return 800;
+    }
+
+    @Override
+    public int getColor() {
+        return 0x8B0000;
+    }
+
+    @Override
+    public RadiusDescriptor getRadius() {
+        return RadiusDescriptor.Rectangle.square(getEffectivePos(), RANGE);
+    }
+
+    /*
+    private static final String TAG_BURN_TIME = "burnTime";
+    private static final int RANGE = 1;
+
+    private static final int COOLDOWN_EVENT = 0;
+
+    private int burnTime =0;
+
+    public BloodyEnchantressBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlocks.BLOODYENCHANTRESS, pos, state);
+    }
+
+
+    @Override
+    public void tickFlower()
+    {
+        super.tickFlower();
+        if (burnTime > 0)
+            burnTime--;
+
+        int ampAll = 0;
+        if (level != null) {
+            for (LivingEntity living : level.getEntitiesOfClass(LivingEntity.class, new AABB(getEffectivePos().offset(-RANGE, -RANGE, -RANGE), getEffectivePos().offset(RANGE + 1, RANGE + 1, RANGE + 1))))
+            {
+                if (!living.isRemoved())
+                {
+                    int amp = living.hasEffect(ModEffects.BLOOD_TEMPTATION.get()) ? Objects.requireNonNull(living.getEffect(ModEffects.BLOOD_TEMPTATION.get())).getAmplifier() : 0;
+                    ampAll += amp;
+                }
+            }
+        }
+        if (ampAll > 35)
+            return;
+
+        if (isValidBinding())
+        {
+            if (burnTime == 0 && getMana() < getMaxMana())
+            {
+                for (LivingEntity living : level.getEntitiesOfClass(LivingEntity.class, new AABB(getEffectivePos().offset(-RANGE, -RANGE, -RANGE), getEffectivePos().offset(RANGE + 1, RANGE + 1, RANGE + 1))))
+                {
+                    if (!living.isRemoved())
+                    {
+                        int amp = living.hasEffect(ModEffects.BLOOD_TEMPTATION.get()) ? Objects.requireNonNull(living.getEffect(ModEffects.BLOOD_TEMPTATION.get())).getAmplifier() : 0;
+                        if (amp > 4 && Math.random() > 0.5F)
+                            continue;
+                        if (amp < 10)
+                        {
+                            addMana((int) (25F * 20F * (1F - 0.04F * amp - 0.02F * ampAll)));
+                        } else
+                            break;
+                        int lv = 0;
+                        if (living.hasEffect(ModEffects.BLOOD_TEMPTATION.get()))
+                        {
+                            lv = Objects.requireNonNull(living.getEffect(ModEffects.BLOOD_TEMPTATION.get())).getAmplifier() + 1;
+                        }
+                        living.addEffect(new MobEffectInstance(ModEffects.BLOOD_TEMPTATION.get(), 8 * 20, lv));
+                        if (living instanceof ServerPlayer)
+                        {
+                            AdvancementHandler.INSTANCE.grantAdvancement((ServerPlayer) living, Utils.BLOODY_ENCHANTRESS_USE);
+                        }
+                        living.hurt(Objects.requireNonNull(this.getLevel()).damageSources().magic(), 4.0F);
+                        burnTime += 20;
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public void writeToPacketNBT(CompoundTag cmp)
+    {
+        super.writeToPacketNBT(cmp);
+        cmp.putInt(TAG_BURN_TIME, burnTime);
+    }
+
+    @Override
+    public void readFromPacketNBT(CompoundTag cmp)
+    {
+        super.readFromPacketNBT(cmp);
+        burnTime = cmp.getInt(TAG_BURN_TIME);
+    }
+
+    @Override
+    public boolean triggerEvent(int event, int param)
+    {
+        if (event == COOLDOWN_EVENT)
+        {
+            Entity e = null;
+            if (level != null) {
+                e = level.getEntity(param);
+            }
+            if (e != null)
+            {
+                e.level().addParticle(ParticleTypes.LARGE_SMOKE, e.getX(), e.getY() + 0.1, e.getZ(), 0.0D, 0.0D, 0.0D);
+                e.level().addParticle(ParticleTypes.FLAME, e.getX(), e.getY(), e.getZ(), 0.0D, 0.0D, 0.0D);
+            }
+            return true;
+        } else
+        {
+            return super.triggerEvent(event, param);
+        }
+    }
+
+    @Override
+    public int getMaxMana() {
+        return 800;
+    }
+
+    @Override
+    public int getColor() {
+        return 0x8B0000;
+    }
+
+    @Override
+    public RadiusDescriptor getRadius() {
+        return RadiusDescriptor.Rectangle.square(getEffectivePos(), RANGE);
+    }
+}*/

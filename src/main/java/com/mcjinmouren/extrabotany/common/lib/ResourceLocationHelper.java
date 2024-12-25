@@ -1,6 +1,6 @@
-package com.mcjinmouren.extrabotany.api.lib;
+package com.mcjinmouren.extrabotany.common.lib;
 
-import com.mcjinmouren.extrabotany.Utils;
+import com.mcjinmouren.extrabotany.ExtraBotany;
 import net.minecraft.resources.ResourceLocation;
 
 public class ResourceLocationHelper {
@@ -9,7 +9,7 @@ public class ResourceLocationHelper {
     }
 
     public static ResourceLocation prefix(String path){
-        return new ResourceLocation(Utils.MOD_ID, path);
+        return new ResourceLocation(ExtraBotany.MOD_ID, path);
     }
 
 }

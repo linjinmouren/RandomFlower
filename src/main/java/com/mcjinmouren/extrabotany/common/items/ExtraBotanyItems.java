@@ -1,6 +1,6 @@
-package com.mcjinmouren.extrabotany.common.Item;
+package com.mcjinmouren.extrabotany.common.items;
 
-import com.mcjinmouren.extrabotany.Utils;
+import com.mcjinmouren.extrabotany.ExtraBotany;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -8,10 +8,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vazkii.botania.xplat.XplatAbstractions;
 
-public class ModItems {
+public class ExtraBotanyItems {
 
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, ExtraBotany.MOD_ID);
 
     public static final RegistryObject<Item> ORICHALCOS_INGOT =ITEMS.register(
             "orichalcos_ingot", ()-> new Item(new Item.Properties()));
