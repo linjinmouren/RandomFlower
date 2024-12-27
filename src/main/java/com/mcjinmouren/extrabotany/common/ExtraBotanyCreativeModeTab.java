@@ -11,7 +11,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModTab {
+public class ExtraBotanyCreativeModeTab {
 
     public static final String MOD_TAB = "extrabotany.creativetab.mod_tab";
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =

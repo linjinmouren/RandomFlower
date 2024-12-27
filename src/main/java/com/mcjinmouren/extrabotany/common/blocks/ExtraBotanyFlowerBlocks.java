@@ -5,6 +5,7 @@ import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
 import com.mcjinmouren.extrabotany.common.lib.LibBlockNames;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -29,7 +30,7 @@ public class ExtraBotanyFlowerBlocks {
     private static final BlockBehaviour.Properties FLOWER_PROPS = BlockBehaviour.Properties.copy(Blocks.POPPY);
     private static final BlockBehaviour.Properties FLOATING_PROPS = BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.5F).sound(SoundType.GRAVEL).lightLevel(s -> 15);
 
-    public static final Block bloodyenchantress = createSpecialFlowerBlock(()-> ExtraBotanyFlowerBlocks.BLOODYENCHANTRESS);
+    public static final Block bloodyenchantress = createSpecialFlowerBlock(BotaniaMobEffects.soulCross, 300, FLOWER_PROPS, ()-> ExtraBotanyFlowerBlocks.BLOODYENCHANTRESS);
     public static final Block bloodyenchantressFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, ()-> ExtraBotanyFlowerBlocks.BLOODYENCHANTRESS);
     public static final Block bloodyenchantressPotted = flowerPot();
 
@@ -37,8 +38,8 @@ public class ExtraBotanyFlowerBlocks {
 
     public static void registerBlocks(BiConsumer<Block, ResourceLocation> r){
     r.accept(bloodyenchantress, LibBlockNames.BLOODY_ENCHANTRESS);
-    r.accept(bloodyenchantressFloating, floating());
-    r.accept(bloodyenchantressPotted, potted());
+    r.accept(bloodyenchantressFloating, floating(LibBlockNames.BLOODY_ENCHANTRESS));
+    r.accept(bloodyenchantressPotted, potted(LibBlockNames.BLOODY_ENCHANTRESS));
     }
 
     public static void registerItemBlocks(BiConsumer<Item, ResourceLocation> r){
@@ -66,26 +67,28 @@ public class ExtraBotanyFlowerBlocks {
         });
     }
 
+    private static ResourceLocation floating(ResourceLocation orig) {
+        return new ResourceLocation(orig.getNamespace(), "floating_" + orig.getPath());
+    }
+
+    private static ResourceLocation potted(ResourceLocation orig) {
+        return new ResourceLocation(orig.getNamespace(), "potted_" + orig.getPath());
+    }
+
+
     private static ResourceLocation getId(Block b) {
         return BuiltInRegistries.BLOCK.getKey(b);
     }
-
-    private static ResourceLocation floating() {
-        return new ResourceLocation(LibBlockNames.BLOODY_ENCHANTRESS.getNamespace(), "floating_" + LibBlockNames.BLOODY_ENCHANTRESS.getPath());
-    }
-
-    private static ResourceLocation potted() {
-        return new ResourceLocation(LibBlockNames.BLOODY_ENCHANTRESS.getNamespace(), "potted_" + LibBlockNames.BLOODY_ENCHANTRESS.getPath());
-    }
-
     static FlowerPotBlock flowerPot() {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
         return new FlowerPotBlock(ExtraBotanyFlowerBlocks.bloodyenchantress, 0 > 0 ? properties.lightLevel(blockState -> 0) : properties);
     }
 
     private static FlowerBlock createSpecialFlowerBlock(
+            MobEffect effect, int effectDuration,
+            BlockBehaviour.Properties props,
             Supplier<BlockEntityType<? extends SpecialFlowerBlockEntity>> beType) {
         return XplatAbstractions.INSTANCE.createSpecialFlowerBlock(
-                BotaniaMobEffects.soulCross, 300, ExtraBotanyFlowerBlocks.FLOWER_PROPS, beType);
+                effect, effectDuration, props, beType);
     }
 }
