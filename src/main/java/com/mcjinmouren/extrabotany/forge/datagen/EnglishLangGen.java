@@ -1,7 +1,6 @@
 package com.mcjinmouren.extrabotany.forge.datagen;
 
 import com.mcjinmouren.extrabotany.ExtraBotany;
-import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 

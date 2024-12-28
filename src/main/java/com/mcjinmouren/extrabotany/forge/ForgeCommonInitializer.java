@@ -4,7 +4,6 @@ import com.mcjinmouren.extrabotany.ExtraBotany;
 import com.mcjinmouren.extrabotany.common.ExtraBotanyCreativeModeTab;
 import com.mcjinmouren.extrabotany.common.blocks.ExtraBotanyFlowerBlocks;
 import com.mcjinmouren.extrabotany.common.effect.ExtraBotanyEffects;
-import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

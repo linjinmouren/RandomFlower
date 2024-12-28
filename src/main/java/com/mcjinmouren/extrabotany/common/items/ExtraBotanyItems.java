@@ -2,10 +2,8 @@ package com.mcjinmouren.extrabotany.common.items;
 
 import com.mcjinmouren.extrabotany.ExtraBotany;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import vazkii.botania.xplat.XplatAbstractions;
 
 public class ExtraBotanyItems {

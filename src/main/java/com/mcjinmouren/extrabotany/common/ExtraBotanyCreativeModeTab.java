@@ -2,7 +2,6 @@ package com.mcjinmouren.extrabotany.common;
 
 import com.mcjinmouren.extrabotany.ExtraBotany;
 import com.mcjinmouren.extrabotany.common.blocks.ExtraBotanyFlowerBlocks;
-import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

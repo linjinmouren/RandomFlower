@@ -1,7 +1,6 @@
 package com.mcjinmouren.extrabotany.forge.client;
 
 import com.google.common.base.Suppliers;
-
 import com.mcjinmouren.extrabotany.ExtraBotany;
 import com.mcjinmouren.extrabotany.client.render.entity.EntityRenderers;
 import com.mcjinmouren.extrabotany.common.blocks.ExtraBotanyFlowerBlocks;
@@ -21,8 +20,8 @@ import vazkii.botania.forge.CapabilityUtil;
 import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.Map;
-import java.util.function.Supplier;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 import static com.mcjinmouren.extrabotany.common.lib.ResourceLocationHelper.prefix;
 
