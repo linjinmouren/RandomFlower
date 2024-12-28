@@ -2,6 +2,6 @@
   "parent": "minecraft:block/flower_pot_cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "plant": "extrabotany:block/bloody_enchantress"
+    "plant": "extrabotany:block/mirrowtunia"
   }
 }

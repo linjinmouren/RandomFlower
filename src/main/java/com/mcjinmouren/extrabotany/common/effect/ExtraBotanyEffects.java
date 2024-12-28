@@ -1,24 +1,21 @@
 package com.mcjinmouren.extrabotany.common.effect;
 
-import com.mcjinmouren.extrabotany.ExtraBotany;
 import com.mcjinmouren.extrabotany.common.effect.MobEffects.BloodTempation;
+import com.mcjinmouren.extrabotany.common.effect.MobEffects.Reflect;
 import com.mcjinmouren.extrabotany.common.lib.LibBrewNames;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.BiConsumer;
 
 public class ExtraBotanyEffects {
 
-    private static final DeferredRegister<MobEffect> MOD_EFFECTS =
-            DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, ExtraBotany.MOD_ID);
+    public static final MobEffect reflect = new Reflect();
+    public static final MobEffect blood_temptation = new BloodTempation();
 
-    public static final RegistryObject<MobEffect> BLOOD_TEMPTATION = MOD_EFFECTS.register(
-            LibBrewNames.BLOOD_TEMPTATION, BloodTempation::new);
-
-    public static void register(IEventBus eventBus){
-        MOD_EFFECTS.register(eventBus);
+    public static void registerPotions(BiConsumer<MobEffect, ResourceLocation> r){
+        r.accept(reflect, LibBrewNames.REFLECT);
+        r.accept(blood_temptation, LibBrewNames.BLOOD_TEMPTATION);
     }
 
 }

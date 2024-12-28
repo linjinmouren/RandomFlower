@@ -3,22 +3,22 @@ loaderVersion="${loader_version_range}"
 license="MIT"
 [[mods]]
 modId="extrabotany"
-version="0.0.1"
+version="0.0.1.8"
 displayName="Extra Botany"
-authors="${mod_authors}"
+authors="mcjinmouren, zhirumo"
 description='''It ports some flowers from ExtraBotany'''
 [[dependencies.extrabotany]]
-    modId="forge"
-    mandatory=true
-    versionRange="${forge_version_range}"
-    ordering="NONE"
-    side="BOTH"
+modId="forge"
+mandatory=true
+versionRange="${forge_version_range}"
+ordering="NONE"
+side="BOTH"
 [[dependencies.extrabotany]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="${minecraft_version_range}"
-    ordering="NONE"
-    side="BOTH"
+modId="minecraft"
+mandatory=true
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"
 [[dependencies.extrabotany]]
 modId="botania"
 mandatory=true

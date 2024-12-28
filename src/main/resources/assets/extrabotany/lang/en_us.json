@@ -1,0 +1,19 @@
+{
+  "block.extrabotany.bloody_enchantress": "Bloody Enchantress",
+  "block.extrabotany.floating_bloody_enchantress": "Floating Bloody Enchantress",
+  "block.extrabotany.potted_bloody_enchantress": "Potted Bloody Enchantress",
+  "block.extrabotany.bell_flower": "Bell Flower",
+  "block.extrabotany.floating_bell_flower": "Floating Bell Flower",
+  "block.extrabotany.potted_bell_flower": "Potted Bell Flower",
+  "block.extrabotany.reikar_lily": "ReikarLily",
+  "block.extrabotany.floating_reikar_lily": "Floating ReikarLily",
+  "block.extrabotany.potted_reikar_lily": "Potted ReikarLily",
+  "block.extrabotany.mirrowtunia": "Mirrowtunia",
+  "block.extrabotany.floating_mirrowtunia": "Floating Mirrowtunia",
+  "block.extrabotany.potted_mirrowtunia": "Potted Mirrowtunia",
+
+  "effect.extrabotany.blood_temptation": "Blood Temptation",
+  "effect.extrabotany.reflect": "Reflect",
+
+  "extrabotany.creativetab.mod_tab": "ExtraBotany"
+}

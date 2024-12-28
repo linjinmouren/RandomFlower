@@ -41,7 +41,7 @@ public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
         Stream<LivingEntity> tmp = level.getEntitiesOfClass(LivingEntity.class, new AABB(getEffectivePos().offset(-RANGE, -RANGE, -RANGE), getEffectivePos().offset(RANGE + 1, RANGE + 1, RANGE + 1))).stream().filter(entity->!entity.isRemoved());
         List<LivingEntity> ampArr = tmp.toList();
         if (ampArr.isEmpty())return;
-        int[] ampNum= ampArr.stream().map(entity -> entity.hasEffect(ExtraBotanyEffects.BLOOD_TEMPTATION.get()) ? Objects.requireNonNull(entity.getEffect(ExtraBotanyEffects.BLOOD_TEMPTATION.get())).getAmplifier() : 0).mapToInt(Integer::intValue).toArray();
+        int[] ampNum= ampArr.stream().map(entity -> entity.hasEffect(ExtraBotanyEffects.blood_temptation) ? Objects.requireNonNull(entity.getEffect(ExtraBotanyEffects.blood_temptation)).getAmplifier() : 0).mapToInt(Integer::intValue).toArray();
         int ampAll= Arrays.stream(ampNum).sum();
         if (ampAll > 35) return;
         for (int i = 0; i < ampNum.length; i++) {
@@ -51,7 +51,7 @@ public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
                     LivingEntity living=ampArr.get(i);
                     if (amp > 4) continue;
                     addMana(500 - 20 * amp - 10 * ampAll);
-                    living.addEffect(new MobEffectInstance(ExtraBotanyEffects.BLOOD_TEMPTATION.get(), 8 * 20, amp + 1));
+                    living.addEffect(new MobEffectInstance(ExtraBotanyEffects.blood_temptation, 8 * 20, amp + 1));
                     if (living instanceof ServerPlayer) AdvancementHandler.INSTANCE.grantAdvancement((ServerPlayer) living, LibAdvancementNames.BLOODY_ENCHANTRESS_USE);
                     living.hurt(Objects.requireNonNull(this.getLevel()).damageSources().magic(), 4.0F);
                     burnTime += 20;

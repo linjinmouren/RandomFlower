@@ -8,10 +8,12 @@
   "block.extrabotany.reikar_lily": "雷卡兰",
   "block.extrabotany.floating_reikar_lily": "浮空雷卡兰",
   "block.extrabotany.potted_reikar_lily": "雷卡兰盆栽",
-
-
+  "block.extrabotany.mirrowtunia": "镜姬",
+  "block.extrabotany.floating_mirrowtunia": "浮空镜姬",
+  "block.extrabotany.potted_mirrowtunia": "镜姬盆栽",
 
   "effect.extrabotany.blood_temptation": "血之诱惑",
+  "effect.extrabotany.reflect": "镜子反射",
 
   "extrabotany.creativetab.mod_tab": "额外植物学"
 }

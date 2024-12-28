@@ -26,6 +26,8 @@ public class ExtraBotanyCreativeModeTab {
                         pOutput.accept(ExtraBotanyFlowerBlocks.bellflower);
                         pOutput.accept(ExtraBotanyFlowerBlocks.reikarlilyFloating);
                         pOutput.accept(ExtraBotanyFlowerBlocks.reikarlily);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.mirrowtuniaFloating);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.mirrowtunia);
                     })
                     .build()
     );
