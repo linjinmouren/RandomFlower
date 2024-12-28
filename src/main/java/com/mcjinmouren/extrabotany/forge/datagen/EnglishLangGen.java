@@ -14,7 +14,7 @@ public class EnglishLangGen extends LanguageProvider {
     //It can't be used,and I don't know why
     @Override
     protected void addTranslations(){
-        add(ExtraBotanyItems.ORICHALCOS_INGOT.get(), "Orichalcos Ingot");
+    //    add(ExtraBotanyItems.ORICHALCOS_INGOT.get(), "Orichalcos Ingot");
     }
 
 }

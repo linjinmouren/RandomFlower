@@ -2,11 +2,13 @@ package com.mcjinmouren.extrabotany.common.blocks;
 
 import com.mcjinmouren.extrabotany.common.blocks.flower.generating.BellFlowerBlockEntity;
 import com.mcjinmouren.extrabotany.common.blocks.flower.generating.BloodyEnchantressBlockEntity;
+import com.mcjinmouren.extrabotany.common.blocks.flower.generating.ReikarLilyBlockEntity;
 import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
 import com.mcjinmouren.extrabotany.common.lib.LibBlockNames;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -39,8 +41,13 @@ public class ExtraBotanyFlowerBlocks {
     public static final Block bellflowerFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, ()-> ExtraBotanyFlowerBlocks.BELLFLOWER);
     public static final Block bellflowerPotted = flowerPot();
 
+    public static final Block reikarlily = createSpecialFlowerBlock(MobEffects.FIRE_RESISTANCE, 240, FLOWER_PROPS, ()->ExtraBotanyFlowerBlocks.REIKARLILY);
+    public static final Block reikarlilyFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, ()-> ExtraBotanyFlowerBlocks.REIKARLILY);
+    public static final Block reikarlilyPotted = flowerPot();
+
     public static final BlockEntityType<BloodyEnchantressBlockEntity> BLOODYENCHANTRESS = XplatAbstractions.INSTANCE.createBlockEntityType(BloodyEnchantressBlockEntity::new, bloodyenchantress, bloodyenchantressFloating);
     public static final BlockEntityType<BellFlowerBlockEntity> BELLFLOWER = XplatAbstractions.INSTANCE.createBlockEntityType(BellFlowerBlockEntity::new, bellflower, bellflowerFloating);
+    public static final BlockEntityType<ReikarLilyBlockEntity> REIKARLILY = XplatAbstractions.INSTANCE.createBlockEntityType(ReikarLilyBlockEntity::new, reikarlily, reikarlilyFloating);
 
     public static void registerBlocks(BiConsumer<Block, ResourceLocation> r){
     r.accept(bloodyenchantress, LibBlockNames.BLOODY_ENCHANTRESS);
@@ -50,6 +57,10 @@ public class ExtraBotanyFlowerBlocks {
     r.accept(bellflower, LibBlockNames.BELL_FLOWER);
     r.accept(bellflowerFloating, floating(LibBlockNames.BELL_FLOWER));
     r.accept(bellflowerPotted, potted(LibBlockNames.BELL_FLOWER));
+
+    r.accept(reikarlily, LibBlockNames.REIKAR_LILY);
+    r.accept(reikarlilyFloating, floating(LibBlockNames.REIKAR_LILY));
+    r.accept(reikarlilyPotted, potted(LibBlockNames.REIKAR_LILY));
     }
 
     public static void registerItemBlocks(BiConsumer<Item, ResourceLocation> r){
@@ -60,16 +71,20 @@ public class ExtraBotanyFlowerBlocks {
 
         r.accept(new SpecialFlowerBlockItem(bellflower, props), getId(bellflower));
         r.accept(new SpecialFlowerBlockItem(bellflowerFloating, props), getId(bellflowerFloating));
+
+        r.accept(new SpecialFlowerBlockItem(reikarlily, props), getId(reikarlily));
+        r.accept(new SpecialFlowerBlockItem(reikarlilyFloating, props), getId(reikarlilyFloating));
     }
 
     public static void registerTEs(BiConsumer<BlockEntityType<?>, ResourceLocation> r){
         r.accept(BLOODYENCHANTRESS, getId(bloodyenchantress));
         r.accept(BELLFLOWER, getId(bellflower));
+        r.accept(REIKARLILY, getId(reikarlily));
     }
 
     public static void registerWandHudCaps(BotaniaBlockEntities.BECapConsumer<WandHUD> consumer){
         consumer.accept(be -> new BindableSpecialFlowerBlockEntity.BindableFlowerWandHud<>((GeneratingFlowerBlockEntity) be),
-                BLOODYENCHANTRESS, BELLFLOWER);
+                BLOODYENCHANTRESS, BELLFLOWER, REIKARLILY);
     }
 
     public static void registerFlowerPotPlants(BiConsumer<ResourceLocation, Supplier<? extends Block>> consumer) {

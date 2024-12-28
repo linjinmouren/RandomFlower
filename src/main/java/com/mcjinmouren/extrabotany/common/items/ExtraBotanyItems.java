@@ -13,13 +13,10 @@ public class ExtraBotanyItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ExtraBotany.MOD_ID);
 
-    public static final RegistryObject<Item> ORICHALCOS_INGOT =ITEMS.register(
-            "orichalcos_ingot", ()-> new Item(new Item.Properties()));
-
     public static Item.Properties defaultBuilder() {
         return XplatAbstractions.INSTANCE.defaultItemBuilder();
     }
-
+/*
     public static void register(IEventBus eventBus){ITEMS.register(eventBus);}
-
+*/
 }

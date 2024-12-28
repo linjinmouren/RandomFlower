@@ -18,15 +18,15 @@ public class ExtraBotanyCreativeModeTab {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ExtraBotany.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> MOD_CREATIVETAB = CREATIVE_MODE_TABS.register(
-            "mod_tab", ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ExtraBotanyItems.ORICHALCOS_INGOT.get()))
+            "mod_tab", ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ExtraBotanyFlowerBlocks.reikarlily))
                     .title(Component.translatable(MOD_TAB))
                     .displayItems((pParameters, pOutput) ->{
-                        pOutput.accept(ExtraBotanyItems.ORICHALCOS_INGOT.get());
                         pOutput.accept(ExtraBotanyFlowerBlocks.bloodyenchantressFloating);
                         pOutput.accept(ExtraBotanyFlowerBlocks.bloodyenchantress);
                         pOutput.accept(ExtraBotanyFlowerBlocks.bellflowerFloating);
                         pOutput.accept(ExtraBotanyFlowerBlocks.bellflower);
-
+                        pOutput.accept(ExtraBotanyFlowerBlocks.reikarlilyFloating);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.reikarlily);
                     })
                     .build()
     );

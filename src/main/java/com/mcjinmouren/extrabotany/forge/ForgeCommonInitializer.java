@@ -33,7 +33,7 @@ public class ForgeCommonInitializer {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ExtraBotanyEffects.register(modEventBus);
-        ExtraBotanyItems.register(modEventBus);
+        //ExtraBotanyItems.register(modEventBus);
         ExtraBotanyCreativeModeTab.register(modEventBus);
     }
 
