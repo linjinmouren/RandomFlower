@@ -1,9 +1,14 @@
 {
   "block.extrabotany.bloody_enchantress": "鲜血妖姬",
   "block.extrabotany.floating_bloody_enchantress": "浮空鲜血妖姬",
-  "block.extrabotany.potted_bloody_enchantress": "鲜血妖姬",
+  "block.extrabotany.potted_bloody_enchantress": "鲜血妖姬盆栽",
+  "block.extrabotany.bell_flower": "风铃草",
+  "block.extrabotany.floating_bell_flower": "浮空风铃草",
+  "block.extrabotany.potted_bell_flower": "风铃草盆栽",
 
-  "item.extrabotany.orichalcos_ingot": "这啥",
+  "item.extrabotany.orichalcos_ingot": "奥利哈刚锭",
+
+  "effect.extrabotany.blood_temptation": "血之诱惑",
 
   "extrabotany.creativetab.mod_tab": "额外植物学"
 }

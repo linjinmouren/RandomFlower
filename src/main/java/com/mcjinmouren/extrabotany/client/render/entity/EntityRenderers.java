@@ -22,6 +22,7 @@ public class EntityRenderers {
 
     public static void registerBlockEntityRenderers(BERConsumer consumer){
         consumer.register(ExtraBotanyFlowerBlocks.BLOODYENCHANTRESS, SpecialFlowerBlockEntityRenderer::new);
+        consumer.register(ExtraBotanyFlowerBlocks.BELLFLOWER, SpecialFlowerBlockEntityRenderer::new);
     }
 
 }

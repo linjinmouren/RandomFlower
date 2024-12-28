@@ -23,6 +23,10 @@ public class ExtraBotanyCreativeModeTab {
                     .displayItems((pParameters, pOutput) ->{
                         pOutput.accept(ExtraBotanyItems.ORICHALCOS_INGOT.get());
                         pOutput.accept(ExtraBotanyFlowerBlocks.bloodyenchantressFloating);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.bloodyenchantress);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.bellflowerFloating);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.bellflower);
+
                     })
                     .build()
     );
