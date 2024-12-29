@@ -10,6 +10,7 @@ public class LibBlockNames {
     public static final ResourceLocation BELL_FLOWER = prefix("bell_flower");
     public static final ResourceLocation REIKAR_LILY = prefix("reikar_lily");
     public static final ResourceLocation MIRROWTUNIA = prefix("mirrowtunia");
+    public static final ResourceLocation OMNIVIOLET = prefix("omni_violet");
 
     public static final String POTTED_PREFIX = "potted_";
 }

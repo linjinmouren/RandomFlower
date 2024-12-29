@@ -2,6 +2,7 @@ package com.mcjinmouren.extrabotany.common;
 
 import com.mcjinmouren.extrabotany.ExtraBotany;
 import com.mcjinmouren.extrabotany.common.blocks.ExtraBotanyFlowerBlocks;
+import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,6 +29,9 @@ public class ExtraBotanyCreativeModeTab {
                         pOutput.accept(ExtraBotanyFlowerBlocks.reikarlily);
                         pOutput.accept(ExtraBotanyFlowerBlocks.mirrowtuniaFloating);
                         pOutput.accept(ExtraBotanyFlowerBlocks.mirrowtunia);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.omnivioletFloating);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.omniviolet);
+                        pOutput.accept(ExtraBotanyItems.POSITION_READER.get());
                     })
                     .build()
     );

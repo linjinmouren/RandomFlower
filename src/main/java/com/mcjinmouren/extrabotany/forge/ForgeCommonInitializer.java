@@ -5,6 +5,7 @@ import com.mcjinmouren.extrabotany.common.ExtraBotanyCreativeModeTab;
 import com.mcjinmouren.extrabotany.common.blocks.ExtraBotanyFlowerBlocks;
 import com.mcjinmouren.extrabotany.common.effect.ExtraBotanyEffects;
 import com.mcjinmouren.extrabotany.common.effect.MobEffects.Reflect;
+import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -35,7 +36,7 @@ public class ForgeCommonInitializer {
         registryInit();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        //ExtraBotanyItems.register(modEventBus);
+        ExtraBotanyItems.register(modEventBus);
         ExtraBotanyCreativeModeTab.register(modEventBus);
     }
 

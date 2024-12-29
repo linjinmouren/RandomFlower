@@ -3,6 +3,7 @@ package com.mcjinmouren.extrabotany.common.blocks;
 import com.mcjinmouren.extrabotany.common.blocks.flower.functional.MirrowtuniaBlockEntity;
 import com.mcjinmouren.extrabotany.common.blocks.flower.generating.BellFlowerBlockEntity;
 import com.mcjinmouren.extrabotany.common.blocks.flower.generating.BloodyEnchantressBlockEntity;
+import com.mcjinmouren.extrabotany.common.blocks.flower.generating.OmniVioletBlockEntity;
 import com.mcjinmouren.extrabotany.common.blocks.flower.generating.ReikarLilyBlockEntity;
 import com.mcjinmouren.extrabotany.common.effect.ExtraBotanyEffects;
 import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
@@ -56,7 +57,11 @@ public class ExtraBotanyFlowerBlocks {
     public static final Block reikarlilyFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, ()-> ExtraBotanyFlowerBlocks.REIKARLILY);
     public static final Block reikarlilyPotted = flowerPot(reikarlily, 0);
     public static final BlockEntityType<ReikarLilyBlockEntity> REIKARLILY = XplatAbstractions.INSTANCE.createBlockEntityType(ReikarLilyBlockEntity::new, reikarlily, reikarlilyFloating);
-
+    //Omni Violet 全知瑾
+    public static final Block omniviolet = createSpecialFlowerBlock(MobEffects.LUCK, 120, FLOWER_PROPS, ()-> ExtraBotanyFlowerBlocks.OMNIVIOLET);
+    public static final Block omnivioletFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, ()-> ExtraBotanyFlowerBlocks.OMNIVIOLET);
+    public static final Block omnivioletPotted = flowerPot(omniviolet, 0);
+    public static final BlockEntityType<OmniVioletBlockEntity> OMNIVIOLET = XplatAbstractions.INSTANCE.createBlockEntityType(OmniVioletBlockEntity::new, omniviolet, omnivioletFloating);
     /*
     @
     @   Part of function flower 功能花部分
@@ -82,6 +87,10 @@ public class ExtraBotanyFlowerBlocks {
     r.accept(reikarlily, LibBlockNames.REIKAR_LILY);
     r.accept(reikarlilyFloating, floating(LibBlockNames.REIKAR_LILY));
     r.accept(reikarlilyPotted, potted(LibBlockNames.REIKAR_LILY));
+    //Omni Violet 全知瑾
+    r.accept(omniviolet, LibBlockNames.OMNIVIOLET);
+    r.accept(omnivioletFloating, floating(LibBlockNames.OMNIVIOLET));
+    r.accept(omnivioletPotted, potted(LibBlockNames.OMNIVIOLET));
     //Mirrowtunia 镜姬
     r.accept(mirrowtunia, LibBlockNames.MIRROWTUNIA);
     r.accept(mirrowtuniaFloating, floating(LibBlockNames.MIRROWTUNIA));
@@ -102,6 +111,9 @@ public class ExtraBotanyFlowerBlocks {
 
         r.accept(new SpecialFlowerBlockItem(mirrowtunia, props), getId(mirrowtunia));
         r.accept(new SpecialFlowerBlockItem(mirrowtuniaFloating, props), getId(mirrowtuniaFloating));
+
+        r.accept(new SpecialFlowerBlockItem(omniviolet, props), getId(omniviolet));
+        r.accept(new SpecialFlowerBlockItem(omnivioletFloating, props), getId(omnivioletFloating));
     }
 
     public static void registerTEs(BiConsumer<BlockEntityType<?>, ResourceLocation> r){
@@ -109,11 +121,12 @@ public class ExtraBotanyFlowerBlocks {
         r.accept(BELLFLOWER, getId(bellflower));
         r.accept(REIKARLILY, getId(reikarlily));
         r.accept(MIRROWTUNIA, getId(mirrowtunia));
+        r.accept(OMNIVIOLET, getId(omniviolet));
     }
 
     public static void registerWandHudCaps(BotaniaBlockEntities.BECapConsumer<WandHUD> consumer){
         consumer.accept(be -> new BindableSpecialFlowerBlockEntity.BindableFlowerWandHud<>((GeneratingFlowerBlockEntity) be),
-                BLOODYENCHANTRESS, BELLFLOWER, REIKARLILY);
+                BLOODYENCHANTRESS, BELLFLOWER, REIKARLILY, OMNIVIOLET);
         consumer.accept(be -> new BindableSpecialFlowerBlockEntity.BindableFlowerWandHud<>((FunctionalFlowerBlockEntity) be),
                 MIRROWTUNIA);
     }
