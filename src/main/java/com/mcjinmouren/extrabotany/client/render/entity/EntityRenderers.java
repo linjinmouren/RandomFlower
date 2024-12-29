@@ -26,6 +26,7 @@ public class EntityRenderers {
         consumer.register(ExtraBotanyFlowerBlocks.REIKARLILY, SpecialFlowerBlockEntityRenderer::new);
         consumer.register(ExtraBotanyFlowerBlocks.MIRROWTUNIA, SpecialFlowerBlockEntityRenderer::new);
         consumer.register(ExtraBotanyFlowerBlocks.OMNIVIOLET, SpecialFlowerBlockEntityRenderer::new);
+        consumer.register(ExtraBotanyFlowerBlocks.GEMINIORCHID, SpecialFlowerBlockEntityRenderer::new);
     }
 
 }

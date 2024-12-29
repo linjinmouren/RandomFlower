@@ -8,9 +8,12 @@
   "block.extrabotany.reikar_lily": "雷卡兰",
   "block.extrabotany.floating_reikar_lily": "浮空雷卡兰",
   "block.extrabotany.potted_reikar_lily": "雷卡兰盆栽",
-  "block.extrabotany:omni_violet": "全知瑾",
+  "block.extrabotany.omni_violet": "全知瑾",
   "block.extrabotany.floating_omni_violet": "浮空全知瑾",
   "block.extrabotany.potted_omni_violet": "全知瑾盆栽",
+  "block.extrabotany.gemini_orchid": "双子兰",
+  "block.extrabotany.floating_gemini_orchid": "浮空双子兰",
+  "block.extrabotany.potted_gemini_orchid": "双子兰盆栽",
   "block.extrabotany.mirrowtunia": "镜姬",
   "block.extrabotany.floating_mirrowtunia": "浮空镜姬",
   "block.extrabotany.potted_mirrowtunia": "镜姬盆栽",
@@ -21,5 +24,6 @@
   "effect.extrabotany.reflect": "镜子反射",
 
   "extrabotany.creativetab.mod_tab": "额外植物学",
-  "item.extrabotany.location.saved": "位置已保存："
+  "item.extrabotany.location.saved": "位置已保存：",
+  "item.extrabotany.position_reader.tooltip": "读取方块的坐标"
 }
