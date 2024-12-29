@@ -1,5 +1,6 @@
 package com.mcjinmouren.extrabotany.common.blocks;
 
+import com.mcjinmouren.extrabotany.common.blocks.flower.functional.EnchantedOrchidBlockEntity;
 import com.mcjinmouren.extrabotany.common.blocks.flower.functional.MirrowtuniaBlockEntity;
 import com.mcjinmouren.extrabotany.common.blocks.flower.generating.*;
 import com.mcjinmouren.extrabotany.common.effect.ExtraBotanyEffects;
@@ -74,7 +75,11 @@ public class ExtraBotanyFlowerBlocks {
     public static final Block mirrowtuniaFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, ()-> ExtraBotanyFlowerBlocks.MIRROWTUNIA);
     public static final Block mirrowtuniaPotted = flowerPot(mirrowtunia,0);
     public static final BlockEntityType<MirrowtuniaBlockEntity> MIRROWTUNIA = XplatAbstractions.INSTANCE.createBlockEntityType(MirrowtuniaBlockEntity::new, mirrowtunia, mirrowtuniaFloating);
-
+    //Enchanted Orchid 蕴魔瑾
+    public static final Block enchantedorchid = createSpecialFlowerBlock(MobEffects.LUCK, 180 , FLOWER_PROPS, ()->ExtraBotanyFlowerBlocks.ENCHANTEDORCHID);
+    public static final Block enchantedorchidFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, ()->ExtraBotanyFlowerBlocks.ENCHANTEDORCHID);
+    public static final Block enchantedorchidPotted = flowerPot(enchantedorchid, 0);
+    public static final BlockEntityType<EnchantedOrchidBlockEntity> ENCHANTEDORCHID = XplatAbstractions.INSTANCE.createBlockEntityType(EnchantedOrchidBlockEntity::new, enchantedorchid, enchantedorchidFloating);
 
     public static void registerBlocks(BiConsumer<Block, ResourceLocation> r){
     //Bloody Enchantress 鲜血妖姬
@@ -101,6 +106,10 @@ public class ExtraBotanyFlowerBlocks {
     r.accept(mirrowtunia, LibBlockNames.MIRROWTUNIA);
     r.accept(mirrowtuniaFloating, floating(LibBlockNames.MIRROWTUNIA));
     r.accept(mirrowtuniaPotted, potted(LibBlockNames.MIRROWTUNIA));
+    //Enchanted Orchid 蕴魔瑾
+    r.accept(enchantedorchid, LibBlockNames.ENCHANTEDORCHID);
+    r.accept(enchantedorchidFloating, floating(LibBlockNames.ENCHANTEDORCHID));
+    r.accept(enchantedorchidPotted, potted(LibBlockNames.ENCHANTEDORCHID));
     }
 
     public static void registerItemBlocks(BiConsumer<Item, ResourceLocation> r){
@@ -123,6 +132,9 @@ public class ExtraBotanyFlowerBlocks {
 
         r.accept(new SpecialFlowerBlockItem(geminiorchid, props), getId(geminiorchid));
         r.accept(new SpecialFlowerBlockItem(geminiorchidFloating, props), getId(geminiorchidFloating));
+
+        r.accept(new SpecialFlowerBlockItem(enchantedorchid, props), getId(enchantedorchid));
+        r.accept(new SpecialFlowerBlockItem(enchantedorchidFloating, props), getId(enchantedorchidFloating));
     }
 
     public static void registerTEs(BiConsumer<BlockEntityType<?>, ResourceLocation> r){
@@ -132,13 +144,14 @@ public class ExtraBotanyFlowerBlocks {
         r.accept(MIRROWTUNIA, getId(mirrowtunia));
         r.accept(OMNIVIOLET, getId(omniviolet));
         r.accept(GEMINIORCHID, getId(geminiorchid));
+        r.accept(ENCHANTEDORCHID, getId(enchantedorchid));
     }
 
     public static void registerWandHudCaps(BotaniaBlockEntities.BECapConsumer<WandHUD> consumer){
         consumer.accept(be -> new BindableSpecialFlowerBlockEntity.BindableFlowerWandHud<>((GeneratingFlowerBlockEntity) be),
                 BLOODYENCHANTRESS, BELLFLOWER, REIKARLILY, OMNIVIOLET, GEMINIORCHID);
         consumer.accept(be -> new BindableSpecialFlowerBlockEntity.BindableFlowerWandHud<>((FunctionalFlowerBlockEntity) be),
-                MIRROWTUNIA);
+                MIRROWTUNIA, ENCHANTEDORCHID);
     }
 
     public static void registerFlowerPotPlants(BiConsumer<ResourceLocation, Supplier<? extends Block>> consumer) {

@@ -3,6 +3,7 @@ package com.mcjinmouren.extrabotany.common.blocks.flower.generating;
 import com.mcjinmouren.extrabotany.common.blocks.ExtraBotanyFlowerBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
@@ -10,8 +11,10 @@ import vazkii.botania.api.block_entity.RadiusDescriptor;
 import java.util.Objects;
 
 public class BellFlowerBlockEntity extends GeneratingFlowerBlockEntity {
-
+    public static final String TAG_PASSIVE_DECAY_TICKS = "passiveDecayTicks";
     private static final int RANGE = 2;
+    public static final int DECAY_TIME = 54000;
+    private int passiveDecayTicks;
 
     public BellFlowerBlockEntity(BlockPos pos, BlockState state) {
         super(ExtraBotanyFlowerBlocks.BELLFLOWER, pos, state);
@@ -30,6 +33,12 @@ public class BellFlowerBlockEntity extends GeneratingFlowerBlockEntity {
             int gen = (baseGen + rain) * y / baseY;
             if(this.ticksExisted % 10 == 0)
                 addMana(gen);
+        }
+        if (!this.getLevel().isClientSide && ++this.passiveDecayTicks > 54000) {
+            this.getLevel().destroyBlock(this.getBlockPos(), false);
+            if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(this.getLevel(), this.getBlockPos())) {
+                this.getLevel().setBlockAndUpdate(this.getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());
+            }
         }
     }
 
@@ -51,13 +60,13 @@ public class BellFlowerBlockEntity extends GeneratingFlowerBlockEntity {
     @Override
     public void writeToPacketNBT(CompoundTag cmp) {
         super.writeToPacketNBT(cmp);
-
+        cmp.putInt("passiveDecayTicks", this.passiveDecayTicks);
     }
 
     @Override
     public void readFromPacketNBT(CompoundTag cmp) {
         super.readFromPacketNBT(cmp);
-
+        this.passiveDecayTicks = cmp.getInt("passiveDecayTicks");
     }
 
 }

@@ -33,6 +33,8 @@ public class ExtraBotanyCreativeModeTab {
                         pOutput.accept(ExtraBotanyFlowerBlocks.omniviolet);
                         pOutput.accept(ExtraBotanyFlowerBlocks.geminiorchidFloating);
                         pOutput.accept(ExtraBotanyFlowerBlocks.geminiorchid);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.enchantedorchidFloating);
+                        pOutput.accept(ExtraBotanyFlowerBlocks.enchantedorchid);
                         pOutput.accept(ExtraBotanyItems.POSITION_READER.get());
                     })
                     .build()
