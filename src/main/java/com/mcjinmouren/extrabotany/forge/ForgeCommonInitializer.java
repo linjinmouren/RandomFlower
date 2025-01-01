@@ -3,6 +3,7 @@ package com.mcjinmouren.extrabotany.forge;
 import com.mcjinmouren.extrabotany.ExtraBotany;
 import com.mcjinmouren.extrabotany.common.ExtraBotanyCreativeModeTab;
 import com.mcjinmouren.extrabotany.common.blocks.ExtraBotanyFlowerBlocks;
+import com.mcjinmouren.extrabotany.common.blocks.flower.functional.ManalinkuimBlockEntity;
 import com.mcjinmouren.extrabotany.common.effect.ExtraBotanyEffects;
 import com.mcjinmouren.extrabotany.common.effect.MobEffects.Reflect;
 import com.mcjinmouren.extrabotany.common.items.ExtraBotanyItems;
@@ -61,6 +62,7 @@ public class ForgeCommonInitializer {
         IEventBus bus = MinecraftForge.EVENT_BUS;
 
         bus.addListener(this::onLivingAttacked);
+        bus.addListener(ManalinkuimBlockEntity::onPlayerUseItem);
     }
 
     public void onLivingAttacked(LivingAttackEvent event) {

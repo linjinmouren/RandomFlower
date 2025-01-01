@@ -28,6 +28,7 @@ public class EntityRenderers {
         consumer.register(ExtraBotanyFlowerBlocks.OMNIVIOLET, SpecialFlowerBlockEntityRenderer::new);
         consumer.register(ExtraBotanyFlowerBlocks.GEMINIORCHID, SpecialFlowerBlockEntityRenderer::new);
         consumer.register(ExtraBotanyFlowerBlocks.ENCHANTEDORCHID, SpecialFlowerBlockEntityRenderer::new);
+        consumer.register(ExtraBotanyFlowerBlocks.MANALINKUIM, SpecialFlowerBlockEntityRenderer::new);
     }
 
 }

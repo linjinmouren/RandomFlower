@@ -13,6 +13,7 @@ public class LibBlockNames {
     public static final ResourceLocation OMNIVIOLET = prefix("omni_violet");
     public static final ResourceLocation GEMINIORCHID = prefix("gemini_orchid");
     public static final ResourceLocation ENCHANTEDORCHID = prefix("enchanted_orchid");
+    public static final ResourceLocation MANALINKUIM = prefix("manalinkuim");
 
     public static final String POTTED_PREFIX = "potted_";
 }

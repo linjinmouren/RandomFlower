@@ -11,9 +11,25 @@
   "block.extrabotany.mirrowtunia": "Mirrowtunia",
   "block.extrabotany.floating_mirrowtunia": "Floating Mirrowtunia",
   "block.extrabotany.potted_mirrowtunia": "Potted Mirrowtunia",
+  "block.extrabotany.omni_violet": "Omni Violet",
+  "block.extrabotany.floating_omni_violet": "Floating Omni Violet",
+  "block.extrabotany.potted_omni_violet": "Potted Omni Violet",
+  "block.extrabotany.gemini_orchid": "Gemini Orchid",
+  "block.extrabotany.floating_gemini_orchid": "Floating Gemini Orchid",
+  "block.extrabotany.potted_gemini_orchid": "Potted Gemini Orchid",
+  "block.extrabotany.enchanted_orchid": "Enchanted Orchid",
+  "block.extrabotany.floating_enchanted_orchid": "Floating Enchanted Orchid",
+  "block.extrabotany.potted_enchanted_orchid": "Potted Enchanted Orchid",
+  "block.extrabotany.manalinkuim": "Manalinkuim",
+  "block.extrabotany.floating_manalinkuim": "Floating Manalinkuim",
+  "block.extrabotany.potted_manalinkuim": "Potted Manalinkuim",
+
+  "item.extrabotany.position_reader": "Position Reader",
 
   "effect.extrabotany.blood_temptation": "Blood Temptation",
   "effect.extrabotany.reflect": "Reflect",
 
-  "extrabotany.creativetab.mod_tab": "ExtraBotany"
+  "extrabotany.creativetab.mod_tab": "ExtraBotany",
+  "item.extrabotany.location.saved": "Location Saved: ",
+  "item.extrabotany.position_reader.tooltip": "Read position of Block"
 }

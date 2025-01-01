@@ -17,10 +17,15 @@ public class ExtraBotanyItems {
     public static final RegistryObject<Item> POSITION_READER = ITEMS.register("position_reader",
             ()-> new PositionReader(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> SPIRIT_FUEL = ITEMS.register("spirit_fuel",
+            ()-> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SPIRIT_FRAGMENT = ITEMS.register("spirit_fragment",
+            ()-> new Item(new Item.Properties()));
+
     public static Item.Properties defaultBuilder() {
         return XplatAbstractions.INSTANCE.defaultItemBuilder();
     }
 
     public static void register(IEventBus eventBus){ITEMS.register(eventBus);}
-
 }
