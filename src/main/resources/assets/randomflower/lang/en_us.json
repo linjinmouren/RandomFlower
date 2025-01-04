@@ -1,0 +1,46 @@
+{
+  "block.randomflower.bloody_enchantress": "Bloody Enchantress",
+  "block.randomflower.floating_bloody_enchantress": "Floating Bloody Enchantress",
+  "block.randomflower.potted_bloody_enchantress": "Potted Bloody Enchantress",
+  "block.randomflower.bell_flower": "Bell Flower",
+  "block.randomflower.floating_bell_flower": "Floating Bell Flower",
+  "block.randomflower.potted_bell_flower": "Potted Bell Flower",
+  "block.randomflower.reikar_lily": "ReikarLily",
+  "block.randomflower.floating_reikar_lily": "Floating ReikarLily",
+  "block.randomflower.potted_reikar_lily": "Potted ReikarLily",
+  "block.randomflower.mirrowtunia": "Mirrowtunia",
+  "block.randomflower.floating_mirrowtunia": "Floating Mirrowtunia",
+  "block.randomflower.potted_mirrowtunia": "Potted Mirrowtunia",
+  "block.randomflower.omni_violet": "Omni Violet",
+  "block.randomflower.floating_omni_violet": "Floating Omni Violet",
+  "block.randomflower.potted_omni_violet": "Potted Omni Violet",
+  "block.randomflower.gemini_orchid": "Gemini Orchid",
+  "block.randomflower.floating_gemini_orchid": "Floating Gemini Orchid",
+  "block.randomflower.potted_gemini_orchid": "Potted Gemini Orchid",
+  "block.randomflower.enchanted_orchid": "Enchanted Orchid",
+  "block.randomflower.floating_enchanted_orchid": "Floating Enchanted Orchid",
+  "block.randomflower.potted_enchanted_orchid": "Potted Enchanted Orchid",
+  "block.randomflower.manalinkuim": "Manalinkuim",
+  "block.randomflower.floating_manalinkuim": "Floating Manalinkuim",
+  "block.randomflower.potted_manalinkuim": "Potted Manalinkuim",
+  "block.randomflower.moonlightlily": "Moonlightlily",
+  "block.randomflower.floating_moonlightlily": "Floating Moonlightlily",
+  "block.randomflower.potted_moonlightlily": "Potted Moonlightlily",
+
+  "item.randomflower.position_reader": "Position Reader",
+  "item.randomflower.mana_reader": "Mana Reader",
+  "item.randomflower.nightmare_fuel": "Nightmare Fuel",
+  "item.randomflower.spirit_fuel": "Spirit Fuel",
+  "item.randomflower.spirit_fragment": "Spirit Fragment",
+
+  "effect.randomflower.blood_temptation": "Blood Temptation",
+  "effect.randomflower.reflect": "Reflect",
+
+  "randomflower.creativetab.mod_tab": "randomflower",
+
+  "message.randomflower.location_saved": "Location Saved: ",
+  "message.randomflower.position_written": "Written Location: ",
+  "message.randomflower.mana_reader.read": "Mana: ",
+
+  "item.randomflower.position_reader.tooltip": "Read position of Block"
+}

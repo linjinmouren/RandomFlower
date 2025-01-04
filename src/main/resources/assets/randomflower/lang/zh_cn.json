@@ -1,0 +1,46 @@
+{
+  "block.randomflower.bloody_enchantress": "鲜血妖姬",
+  "block.randomflower.floating_bloody_enchantress": "浮空鲜血妖姬",
+  "block.randomflower.potted_bloody_enchantress": "鲜血妖姬盆栽",
+  "block.randomflower.bell_flower": "风铃草",
+  "block.randomflower.floating_bell_flower": "浮空风铃草",
+  "block.randomflower.potted_bell_flower": "风铃草盆栽",
+  "block.randomflower.reikar_lily": "雷卡兰",
+  "block.randomflower.floating_reikar_lily": "浮空雷卡兰",
+  "block.randomflower.potted_reikar_lily": "雷卡兰盆栽",
+  "block.randomflower.omni_violet": "全知瑾",
+  "block.randomflower.floating_omni_violet": "浮空全知瑾",
+  "block.randomflower.potted_omni_violet": "全知瑾盆栽",
+  "block.randomflower.gemini_orchid": "双子兰",
+  "block.randomflower.floating_gemini_orchid": "浮空双子兰",
+  "block.randomflower.potted_gemini_orchid": "双子兰盆栽",
+  "block.randomflower.mirrowtunia": "镜姬",
+  "block.randomflower.floating_mirrowtunia": "浮空镜姬",
+  "block.randomflower.potted_mirrowtunia": "镜姬盆栽",
+  "block.randomflower.enchanted_orchid": "蕴魔瑾",
+  "block.randomflower.floating_enchanted_orchid": "浮空蕴魔瑾",
+  "block.randomflower.potted_enchanted_orchid": "蕴魔瑾盆栽",
+  "block.randomflower.manalinkuim": "魔链星",
+  "block.randomflower.floating_manalinkuim": "浮空魔链星",
+  "block.randomflower.potted_manalinkuim": "魔链星盆栽",
+  "block.randomflower.moonlightlily": "月光百合",
+  "block.randomflower.floating_moonlightlily": "浮空月光百合",
+  "block.randomflower.potted_moonlightlily": "月光百合盆栽",
+
+  "item.randomflower.position_reader": "坐标读取器",
+  "item.randomflower.mana_reader": "魔力读取器",
+  "item.randomflower.nightmare_fuel": "梦魇燃料",
+  "item.randomflower.spirit_fuel": "精神燃料",
+  "item.randomflower.spirit_fragment": "精神碎片",
+
+  "effect.randomflower.blood_temptation": "血之诱惑",
+  "effect.randomflower.reflect": "镜子反射",
+
+  "randomflower.creativetab.mod_tab": "额外植物学",
+
+  "message.randomflower.location_saved": "位置已保存：",
+  "message.randomflower.mana_reader.read": "魔力：",
+  "message.randomflower.position_written": "写入坐标：",
+
+  "item.randomflower.position_reader.tooltip": "读取方块的坐标"
+}

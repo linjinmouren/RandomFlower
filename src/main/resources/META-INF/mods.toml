@@ -2,36 +2,36 @@ modLoader="javafml"
 loaderVersion="${loader_version_range}"
 license="MIT"
 [[mods]]
-modId="extrabotany"
-version="0.0.1.8"
+modId="randomflower"
+version="0.0.1.11"
 displayName="Extra Botany"
 authors="mcjinmouren, zhirumo"
 description='''It ports some flowers from ExtraBotany'''
-[[dependencies.extrabotany]]
+[[dependencies.randomflower]]
 modId="forge"
 mandatory=true
 versionRange="${forge_version_range}"
 ordering="NONE"
 side="BOTH"
-[[dependencies.extrabotany]]
+[[dependencies.randomflower]]
 modId="minecraft"
 mandatory=true
 versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
-[[dependencies.extrabotany]]
+[[dependencies.randomflower]]
 modId="botania"
 mandatory=true
 versionRange="(1.20.1-446,]"
 ordering="NONE"
 side="BOTH"
-[[dependencies.extrabotany]]
+[[dependencies.randomflower]]
 modId="curios"
 mandatory=true
 versionRange="(5.9,]"
 ordering="NONE"
 side="BOTH"
-[[dependencies.extrabotany]]
+[[dependencies.randomflower]]
 modId="patchouli"
 mandatory=true
 versionRange="(1.20.1-80,]"

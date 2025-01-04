@@ -1,10 +1,11 @@
 {
   "replace": false,
   "values": [
-    "extrabotany:bloody_enchantress",
-    "extrabotany:bell_flower",
-    "extrabotany:reikar_lily",
-    "extrabotany:omni_violet",
-    "extrabotany:gemini_orchid"
+    "randomflower:bloody_enchantress",
+    "randomflower:bell_flower",
+    "randomflower:reikar_lily",
+    "randomflower:omni_violet",
+    "randomflower:gemini_orchid",
+    "randomflower:moonlightlily"
   ]
 }

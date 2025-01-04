@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+      "W": {
+        "item": "botania:livingwood_twig"
+      },
+      "M": {
+        "item": "botania:manasteel_ingot"
+      }
+    },
+    "pattern": [
+      " WM",
+      " MW",
+      "W  "
+    ],
+    "result": {
+        "item": "randomflower:mana_reader"
+      }
+    }

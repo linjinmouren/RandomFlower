@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+      "W": {
+        "item": "botania:livingwood_twig"
+      },
+      "D": {
+        "item": "botania:dragonstone"
+      },
+      "P": {
+        "item": "botania:mana_powder"
+      }
+    },
+    "pattern": [
+      " PD",
+      " WP",
+      "W  "
+    ],
+    "result": {
+      "item": "randomflower:position_reader"
+    }
+}

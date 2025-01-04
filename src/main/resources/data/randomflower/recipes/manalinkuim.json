@@ -1,0 +1,35 @@
+{
+    "type": "botania:petal_apothecary",
+    "ingredients": [
+      {
+        "tag": "botania:petals/light_blue"
+      },
+      {
+        "tag": "botania:petals/light_blue"
+      },
+      {
+        "tag": "botania:petals/light_blue"
+      },
+      {
+        "tag": "botania:petals/cyan"
+      },
+      {
+        "tag": "botania:petals/cyan"
+      },
+      {
+        "item": "botania:rune_pride"
+      },
+      {
+        "item": "botania:rune_sloth"
+      },
+      {
+        "item": "botania:life_essence"
+      }
+    ],
+    "output": {
+      "item": "randomflower:manalinkuim"
+    },
+    "reagent": {
+      "tag": "botania:seed_apothecary_reagent"
+    }
+  }

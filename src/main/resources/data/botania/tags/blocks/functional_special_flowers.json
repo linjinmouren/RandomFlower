@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "extrabotany:mirrowtunia",
-    "extrabotany:enchanted_orchid",
-    "extrabotany:manalinkuim"
+    "randomflower:mirrowtunia",
+    "randomflower:enchanted_orchid",
+    "randomflower:manalinkuim"
   ]
 }

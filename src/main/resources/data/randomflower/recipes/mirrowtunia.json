@@ -1,0 +1,35 @@
+{
+    "type": "botania:petal_apothecary",
+    "ingredients": [
+      {
+        "tag": "botania:petals/blue"
+      },
+      {
+        "tag": "botania:petals/light_blue"
+      },
+      {
+        "tag": "botania:petals/cyan"
+      },
+      {
+        "tag": "botania:petals/cyan"
+      },
+      {
+        "item": "botania:rune_spring"   
+      },
+      {
+        "item": "botania:rune_pride"
+      },
+      {
+        "item": "botania:rune_wrath"
+      },
+      {
+        "item": "botania:mana_powder"
+      }
+    ],
+    "output": {
+      "item": "randomflower:mirrowtunia"
+    },
+    "reagent": {
+      "tag": "botania:seed_apothecary_reagent"
+    }
+  }
