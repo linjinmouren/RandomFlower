@@ -28,7 +28,7 @@ public class ManaReader extends Item{
         if (blockEntity instanceof ManaReceiver manaReceiver){
             PlayerChat.sendStatusMessage(player, PlayerChat.lang("message.randomflower.mana_reader.read") + manaReceiver.getCurrentMana());
         }
-        if (blockEntity instanceof BindableSpecialFlowerBlockEntity bindableSpecialFlowerBlockEntity)PlayerChat.sendStatusMessage(player, PlayerChat.lang("item.randomflower.CurrentMana.tooltip") +bindableSpecialFlowerBlockEntity.getMana());
+        if (blockEntity instanceof BindableSpecialFlowerBlockEntity bindableSpecialFlowerBlockEntity)PlayerChat.sendStatusMessage(player, PlayerChat.lang("message.randomflower.mana_reader.read") +bindableSpecialFlowerBlockEntity.getMana());
 
         return InteractionResult.SUCCESS;
     }

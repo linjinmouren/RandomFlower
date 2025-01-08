@@ -3,8 +3,8 @@ loaderVersion="${loader_version_range}"
 license="MIT"
 [[mods]]
 modId="randomflower"
-version="0.0.1.11"
-displayName="Extra Botany"
+version="0.0.1.12"
+displayName="Random Flower"
 authors="mcjinmouren, zhirumo"
 description='''It ports some flowers from ExtraBotany'''
 [[dependencies.randomflower]]

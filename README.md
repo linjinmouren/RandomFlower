@@ -1,5 +1,6 @@
-# RandomFlower (No more updates)
+# RandomFlower
 
+No more updates Until the release of version 1.21 of Botania.
 
 A Botania Addon adds some new flowers.
 

@@ -29,6 +29,7 @@ public class ReikarLilyBlockEntity extends GeneratingFlowerBlockEntity {
 
         if (getLevel().isRaining() && getLevel().canSeeSky(worldPosition) && cd == 0) {
             int baseY = 64;
+            if (worldPosition.getY() < 1) return;
             if (getLevel().random.nextInt((int) (4000 * baseY / worldPosition.getY())) == 1) {
                 LightningBolt bolt = new LightningBolt(EntityType.LIGHTNING_BOLT, getLevel());
                 bolt.setPos(getEffectivePos().getX(), getEffectivePos().getY(), getEffectivePos().getZ());
