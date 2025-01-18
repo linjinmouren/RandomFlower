@@ -22,6 +22,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
 
+/**
+ * This class defines the logic after using the Position Reader.
+ * 该类定义了使用了坐标读取器后的逻辑。
+ */
 
 public class PositionReader extends Item {
     private static final String NBT_DIM = "dim";

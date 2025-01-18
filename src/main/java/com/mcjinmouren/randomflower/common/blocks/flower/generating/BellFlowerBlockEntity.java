@@ -10,6 +10,11 @@ import vazkii.botania.api.block_entity.RadiusDescriptor;
 
 import java.util.Objects;
 
+/**
+ * Bell Flower
+ * 风铃草
+ */
+
 public class BellFlowerBlockEntity extends GeneratingFlowerBlockEntity {
     public static final String TAG_PASSIVE_DECAY_TICKS = "passiveDecayTicks";
     private static final int RANGE = 2;
@@ -28,13 +33,21 @@ public class BellFlowerBlockEntity extends GeneratingFlowerBlockEntity {
         int baseY = 90;
         int y = this.getEffectivePos().getY();
 
+        /*
+          get pos and add mana.
+          获取坐标并增加魔力。
+         */
         if(Objects.requireNonNull(this.getLevel()).canSeeSky(this.getEffectivePos()) && y > baseY){
             int rain = this.getLevel().isRaining() ? 3 : 0;
             int gen = (baseGen + rain) * y / baseY;
             if(this.ticksExisted % 10 == 0)
                 addMana(gen);
         }
-        if (!this.getLevel().isClientSide && ++this.passiveDecayTicks > 54000) {
+        /*
+          If the lifespan is reached, turn the flower into a withered bush.
+          如果到达了寿命，把花变成枯死的灌木。
+         */
+        if (!this.getLevel().isClientSide && ++this.passiveDecayTicks > DECAY_TIME) {
             this.getLevel().destroyBlock(this.getBlockPos(), false);
             if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(this.getLevel(), this.getBlockPos())) {
                 this.getLevel().setBlockAndUpdate(this.getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());
@@ -60,13 +73,13 @@ public class BellFlowerBlockEntity extends GeneratingFlowerBlockEntity {
     @Override
     public void writeToPacketNBT(CompoundTag cmp) {
         super.writeToPacketNBT(cmp);
-        cmp.putInt("passiveDecayTicks", this.passiveDecayTicks);
+        cmp.putInt(TAG_PASSIVE_DECAY_TICKS, this.passiveDecayTicks);
     }
 
     @Override
     public void readFromPacketNBT(CompoundTag cmp) {
         super.readFromPacketNBT(cmp);
-        this.passiveDecayTicks = cmp.getInt("passiveDecayTicks");
+        this.passiveDecayTicks = cmp.getInt(TAG_PASSIVE_DECAY_TICKS);
     }
 
 }

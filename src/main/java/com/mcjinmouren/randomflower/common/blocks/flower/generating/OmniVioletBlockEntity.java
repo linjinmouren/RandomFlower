@@ -14,6 +14,11 @@ import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 import vazkii.botania.common.handler.BotaniaSounds;
 
+/**
+ * Omni Violet
+ * 全知瑾
+ */
+
 public class OmniVioletBlockEntity extends GeneratingFlowerBlockEntity {
 
     private static final String TAG_BURN_TIME = "burnTime";

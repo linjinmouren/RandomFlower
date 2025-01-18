@@ -15,7 +15,17 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * This class can conveniently handle content related to coordinates,
+ * including coordinate transformation and so on. In addition,
+ * it can also detect the existence of multi-block structures.
+ * 这个类可以方便地处理一些于坐标有关的内容，包括坐标的转化等等。
+ * 除此以外，它还可以检测多方块结构的存在。
+ */
 
 public class BlockPosDim {
 

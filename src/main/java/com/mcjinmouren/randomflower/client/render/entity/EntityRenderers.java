@@ -9,6 +9,12 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import vazkii.botania.client.render.block_entity.SpecialFlowerBlockEntityRenderer;
 
+/**
+ * This class is used to handle the rendering of floating flowers on the client side.
+ * It is a client-only class.
+ * 该类用来处理浮空花在客户端的渲染，仅在客户端有效。
+ */
+
 public class EntityRenderers {
 
     public interface EntityRendererConsumer {

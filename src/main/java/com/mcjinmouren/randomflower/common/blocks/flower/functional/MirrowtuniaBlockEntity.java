@@ -12,8 +12,13 @@ import net.minecraft.world.phys.AABB;
 import vazkii.botania.api.block_entity.FunctionalFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 
-import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
+
+/**
+ * Mirrow Tunia
+ * 镜姬
+ */
 
 public class MirrowtuniaBlockEntity extends FunctionalFlowerBlockEntity {
 
@@ -23,12 +28,14 @@ public class MirrowtuniaBlockEntity extends FunctionalFlowerBlockEntity {
 
     public void tickFlower() {
         super.tickFlower();
-        if (!this.getLevel().isClientSide && this.redstoneSignal <= 0) {
-            List<LivingEntity> entities = this.getLevel().getEntitiesOfClass(LivingEntity.class, new AABB(this.getEffectivePos().offset(-6, -6, -6), this.getEffectivePos().offset(7, 7, 7)));
-            Iterator var2 = entities.iterator();
+        if (level != null && level.isClientSide && this.redstoneSignal <= 0) {
+            List<LivingEntity> entities = Objects.requireNonNull(this.getLevel()).getEntitiesOfClass(LivingEntity.class, new AABB(this.getEffectivePos().offset(-6, -6, -6), this.getEffectivePos().offset(7, 7, 7)));
 
-            while(var2.hasNext()) {
-                LivingEntity entity = (LivingEntity)var2.next();
+            /*
+              Iterate through each entity. If it is a player, apply a potion effect.
+              遍历每个实体，如果是玩家，给予药水效果。
+             */
+            for (LivingEntity entity : entities) {
                 if ((entity instanceof Player) && entity.getEffect(RandomFlowerEffects.reflect) == null && this.getMana() >= 20 && !entity.level().isClientSide && entity.getMobType() != MobType.UNDEAD) {
                     entity.addEffect(new MobEffectInstance(RandomFlowerEffects.reflect, 8 * 30, 0));
                     this.addMana(-20);

@@ -21,6 +21,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+/**
+ * Bloody Enchantress
+ * 鲜血妖姬
+ */
+
 public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
     private static final String TAG_BURN_TIME = "burnTime";
     private static final int RANGE = 1;
@@ -31,6 +36,7 @@ public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
         super(RandomFlowerFlowerBlocks.BLOODYENCHANTRESS, pos, state);
     }
 
+
     public void tickFlower() {
         super.tickFlower();
         if (burnTime > 0) {
@@ -40,6 +46,10 @@ public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
         if (!isValidBinding() || getMana() >= getMaxMana() || level == null) return;
         Stream<LivingEntity> tmp = level.getEntitiesOfClass(LivingEntity.class, new AABB(getEffectivePos().offset(-RANGE, -RANGE, -RANGE), getEffectivePos().offset(RANGE + 1, RANGE + 1, RANGE + 1))).stream().filter(entity->!entity.isRemoved());
         List<LivingEntity> ampArr = tmp.toList();
+        /*
+          Apply a potion effect and deduct health in the form of magical damage.
+          给予药水效果并且以魔法伤害的方式扣除生命值。
+         */
         if (ampArr.isEmpty())return;
         int[] ampNum= ampArr.stream().map(entity -> entity.hasEffect(RandomFlowerEffects.blood_temptation) ? Objects.requireNonNull(entity.getEffect(RandomFlowerEffects.blood_temptation)).getAmplifier() : 0).mapToInt(Integer::intValue).toArray();
         int ampAll= Arrays.stream(ampNum).sum();

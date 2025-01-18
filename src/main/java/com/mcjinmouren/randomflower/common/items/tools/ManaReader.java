@@ -10,6 +10,11 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import vazkii.botania.api.block_entity.BindableSpecialFlowerBlockEntity;
 import vazkii.botania.api.mana.ManaReceiver;
 
+/**
+ * This class defines the logic after using the Mana Reader.
+ * 该类定义了使用了魔力读取器后的逻辑。
+ */
+
 public class ManaReader extends Item{
 
     public ManaReader(Properties pProperties) {

@@ -9,14 +9,21 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Objects;
+
+/**
+ * This class creates the Reflect effect.
+ * 该类创建了镜子反射效果。
+ */
 
 public class Reflect extends MobEffect {
     public Reflect() {
         super(MobEffectCategory.NEUTRAL, 0X4169E1);
     }
 
+    @SubscribeEvent
     public static void onLivingAttacked(LivingAttackEvent event) {
         LivingEntity living = event.getEntity();
         DamageSource source = event.getSource();

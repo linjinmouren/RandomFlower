@@ -11,6 +11,11 @@ import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 import vazkii.botania.client.fx.WispParticleData;
 
+/**
+ * Reikar Lily
+ * 雷卡兰
+ */
+
 public class ReikarLilyBlockEntity extends GeneratingFlowerBlockEntity {
 
     private static final String TAG_BURN_TIME = "burnTime";

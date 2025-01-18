@@ -9,6 +9,11 @@ import net.minecraftforge.fluids.IFluidBlock;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 
+/**
+ * Gemini Orchid
+ * 双子兰
+ */
+
 public class GeminiOrchidBlockEntity extends GeneratingFlowerBlockEntity {
 
     private static final BlockPos[] OFFSETS = {new BlockPos(0, 0, 1), new BlockPos(0, 0, -1), new BlockPos(1, 0, 0), new BlockPos(-1, 0, 0), new BlockPos(-1, 0, 1), new BlockPos(-1, 0, -1), new BlockPos(1, 0, 1), new BlockPos(1, 0, -1)};

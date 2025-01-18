@@ -28,6 +28,11 @@ import vazkii.botania.common.helper.PlayerHelper;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * This class is used to handle various in - game events for players.
+ * 该类用来处理玩家游戏中的不同事件。
+ */
+
 @Mod.EventBusSubscriber
 public final class AdvancementHandler {
 
@@ -38,6 +43,10 @@ public final class AdvancementHandler {
         PlayerHelper.grantCriterion(player, new ResourceLocation(RandomFlower.MOD_ID, "main/" + id), "code_triggered");
     }
 
+    /**
+     * This method is used to check achievements.
+     * 该方法用来检查成就。
+     */
     public static boolean checkAdvancement(Player player, String modid, String advancement)
     {
         ResourceLocation id = ResourceLocation.tryParse(modid + ":main/" + advancement);
@@ -99,6 +108,10 @@ public final class AdvancementHandler {
         return false;
     }
 
+    /**
+     * This method is triggered when the player uses an item.
+     * 如果玩家使用物品，会触发这个方法。
+     */
     @SubscribeEvent
     public static void onPlayerInteract(PlayerInteractEvent event)
     {
@@ -112,6 +125,10 @@ public final class AdvancementHandler {
         }
     }
 
+    /**
+     * This method is used to get tooltip information.
+     * 该方法用来获取提示信息。
+     */
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onTooltip(ItemTooltipEvent event)
@@ -127,6 +144,10 @@ public final class AdvancementHandler {
         }
     }
 
+    /**
+     * This method is triggered when there is an entity update.
+     * 当有实体更新时，会触发这个方法。
+     */
     @SubscribeEvent
     public static void onLivingUpdate(LivingEvent event)
     {

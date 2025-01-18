@@ -8,6 +8,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 
+/**
+ * MoonLight Lily
+ * 月光百合
+ */
+
 public class MoonlightLilyBlockEntity extends GeneratingFlowerBlockEntity {
     public static final String TAG_PASSIVE_DECAY_TICKS = "passiveDecayTicks";
     public static final int DECAY_TIME = 36000;
@@ -55,12 +60,12 @@ public class MoonlightLilyBlockEntity extends GeneratingFlowerBlockEntity {
     @Override
     public void writeToPacketNBT(CompoundTag cmp) {
         super.writeToPacketNBT(cmp);
-        cmp.putInt("passiveDecayTicks", this.passiveDecayTicks);
+        cmp.putInt(TAG_PASSIVE_DECAY_TICKS, this.passiveDecayTicks);
     }
 
     @Override
     public void readFromPacketNBT(CompoundTag cmp) {
         super.readFromPacketNBT(cmp);
-        this.passiveDecayTicks = cmp.getInt("passiveDecayTicks");
+        this.passiveDecayTicks = cmp.getInt(TAG_PASSIVE_DECAY_TICKS);
     }
 }

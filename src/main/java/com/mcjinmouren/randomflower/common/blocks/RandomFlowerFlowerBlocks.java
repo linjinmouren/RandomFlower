@@ -31,6 +31,11 @@ import vazkii.botania.xplat.XplatAbstractions;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
+/**
+ * This class is used to register the power - generating flowers and functional flowers in the mod.
+ * 该类用来注册模组中的产能花和功能花。
+ */
+
 public class RandomFlowerFlowerBlocks {
 
     private static final BlockBehaviour.Properties FLOWER_PROPS = BlockBehaviour.Properties.copy(Blocks.POPPY);

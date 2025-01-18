@@ -1,24 +1,20 @@
 package com.mcjinmouren.randomflower.common.items.fuel;
 
-import com.mcjinmouren.randomflower.common.items.RandomFlowerItems;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+
+/**
+ * This class is currently not in use.
+ * 这个类目前没有什么用。
+ */
 
 public class NightmareFuel extends Item {
-
 
     private final int burnTime = 2000;
 
     public NightmareFuel(Properties p_41383_) {
         super(p_41383_);
     }
-
+/*
     @Override
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
         return burnTime;
@@ -35,5 +31,5 @@ public class NightmareFuel extends Item {
             if (!player.getInventory().add(item))
                 player.drop(item, false);
         return stack;
-    }
+    }*/
 }

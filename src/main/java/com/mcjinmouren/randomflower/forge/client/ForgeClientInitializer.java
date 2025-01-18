@@ -25,6 +25,11 @@ import java.util.function.Supplier;
 
 import static com.mcjinmouren.randomflower.common.lib.ResourceLocationHelper.prefix;
 
+/**
+ * This class registers events on the client side.
+ * 这个类注册了在客户端上的事件。
+ */
+
 @Mod.EventBusSubscriber(modid = RandomFlower.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ForgeClientInitializer {
 
@@ -32,7 +37,7 @@ public class ForgeClientInitializer {
     public static void clientInit(FMLClientSetupEvent evt){
 
         var bus = MinecraftForge.EVENT_BUS;
-
+        //Wand HUD 权杖界面
         bus.addGenericListener(BlockEntity.class, ForgeClientInitializer::attachBeCapabilities);
     }
 

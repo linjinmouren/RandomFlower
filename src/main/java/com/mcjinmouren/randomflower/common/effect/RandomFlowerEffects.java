@@ -8,6 +8,11 @@ import net.minecraft.world.effect.MobEffect;
 
 import java.util.function.BiConsumer;
 
+/**
+ * This class registers Mod's effect.
+ * 该类注册了模组的药水效果。
+ */
+
 public class RandomFlowerEffects {
 
     public static final MobEffect reflect = new Reflect();

@@ -26,6 +26,11 @@ import vazkii.botania.common.block.block_entity.mana.ManaPoolBlockEntity;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * ManaLinkUim
+ * 魔链星
+ */
+
 public class ManalinkuimBlockEntity extends FunctionalFlowerBlockEntity {
 
     private static final String TAG_X = "x";
@@ -38,6 +43,8 @@ public class ManalinkuimBlockEntity extends FunctionalFlowerBlockEntity {
     BlockEntity blockEntity;
     private static final HashMap<BlockPos, Object> structure= new HashMap<>();
     static {
+        //check the structure
+        //检测多方块结构部分
         for (int i = -2; i <= 2; i++) {
             structure.put(new BlockPos(i,-1,-2),Blocks.QUARTZ_BLOCK);
             structure.put(new BlockPos(i,-1,2),Blocks.QUARTZ_BLOCK);
@@ -53,6 +60,11 @@ public class ManalinkuimBlockEntity extends FunctionalFlowerBlockEntity {
         structure.put(new BlockPos(-1,-1,1),Blocks.LAPIS_BLOCK);
         structure.put(new BlockPos(-1,-1,-1),Blocks.LAPIS_BLOCK);
     }
+
+    /**
+     * This method is used to get the target coordinates.
+     * 该方法用来获取目标坐标。
+     */
     @SubscribeEvent
     public static void onPlayerUseItem(PlayerInteractEvent.RightClickBlock event){
         Player player = event.getEntity();
@@ -70,6 +82,12 @@ public class ManalinkuimBlockEntity extends FunctionalFlowerBlockEntity {
             }
         }
     }
+
+    /**
+     * Write Pos into Tag and saved.
+     * 把坐标写入到TAG中并保存。
+     */
+
     private void upDataPos(){
         if (level != null) {
             CompoundTag tag = Objects.requireNonNull(level.getBlockEntity(getBlockPos())).getPersistentData();
@@ -86,6 +104,7 @@ public class ManalinkuimBlockEntity extends FunctionalFlowerBlockEntity {
     public ManalinkuimBlockEntity(BlockPos pos, BlockState state) {
         super(RandomFlowerFlowerBlocks.MANALINKUIM, pos, state);
     }
+
     public void tickFlower() {
         super.tickFlower();
         if (sleep>0){sleep--;return;}

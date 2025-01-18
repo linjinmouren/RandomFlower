@@ -12,6 +12,11 @@ import vazkii.botania.api.block_entity.RadiusDescriptor;
 import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BotaniaItems;
 
+/**
+ *  Enchanted Orchid
+ *  蕴魔瑾
+ */
+
 public class EnchantedOrchidBlockEntity extends FunctionalFlowerBlockEntity {
 
     private static final int RANGE = 4;
@@ -30,6 +35,12 @@ public class EnchantedOrchidBlockEntity extends FunctionalFlowerBlockEntity {
 
     public void tickFlower() {
         super.tickFlower();
+
+        /*
+          If there is no material, check the nearby drops every tick.
+          If there is an item that meets the conditions, reduce it by one and record it.
+          如果没有材料，那么每tick检查附近的掉落物，如果有符合条件的物品，减少一个并记录。
+         */
 
         if(!hasIngot && this.redstoneSignal <= 0){
             for(ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, new AABB(getEffectivePos().offset(-RANGE, -RANGE, -RANGE),
@@ -50,6 +61,10 @@ public class EnchantedOrchidBlockEntity extends FunctionalFlowerBlockEntity {
                 BlockPos up = pos.above();
                 BlockState flower = BotaniaBlocks.getFlower(DyeColor.byId(1)).defaultBlockState();
                 if (flower.canSurvive(this.getLevel(), up)){
+                    /*
+                    I don't know how to check if block is a grass block.
+                    我的几种检测方法均不可用，所有就用一种奇怪的方法。
+                    */
                     this.getLevel().setBlockAndUpdate(pos, BotaniaBlocks.enchantedSoil.defaultBlockState());
                     hasIngot = false;
                     addMana(-250000);

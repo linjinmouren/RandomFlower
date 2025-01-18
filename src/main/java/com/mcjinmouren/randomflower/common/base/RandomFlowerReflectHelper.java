@@ -5,6 +5,11 @@ import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * This class is currently not in use.
+ * 这个类目前没有什么用。
+ */
+
 public class RandomFlowerReflectHelper {
     public static <T, E> T getPrivateValue(Class<? super E> clazz, E instance, String fieldName)
     {
